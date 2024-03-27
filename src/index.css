@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* .parent > div:nth-child(4n-1){
+    background-color: rgb(218, 185, 185);
+} */
