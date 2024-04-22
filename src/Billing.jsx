@@ -85,7 +85,7 @@ const handleNavigate = ()=>{
 
   return (
     <>
-    <div className="max-w-3xl mx-auto">
+    <div className="w-full h-auto">
       <h2 className="text-2xl font-bold mb-4">Bill Generator</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">

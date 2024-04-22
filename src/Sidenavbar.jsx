@@ -4,7 +4,7 @@ import { Link, Outlet } from 'react-router-dom';
 
 const Sidenav = () => {
   return (
-    <div className="flex h-screen">
+    <div className="flex h-auto">
 
       <div className="flex flex-col w-48 bg-gray-800 text-white">
   
