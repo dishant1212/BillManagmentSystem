@@ -85,11 +85,11 @@ const handleNavigate = ()=>{
 
   return (
     <>
-    <div className="w-full h-auto">
-      <h2 className="text-2xl font-bold mb-4">Bill Generator</h2>
+    <div className="w-full h-screen px-4 pt-14 ">
+      
       <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label htmlFor="customerName" className="block font-bold mb-1">
+        <div className="">
+          <label htmlFor="customerName" className="block font-bold ">
             Customer Name
           </label>
           <input
@@ -98,10 +98,10 @@ const handleNavigate = ()=>{
             value={customerName}
             required
             onChange={(e) => setCustomerName(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-[5px] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <div className="mb-4">
+        <div className="">
           <label htmlFor="customerMobile" className="block font-bold mb-1">
             Customer Mobile Number
           </label>
@@ -111,10 +111,10 @@ const handleNavigate = ()=>{
             id="customerMobile"
             value={customerMobile}
             onChange={(e) => setCustomerMobile(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-[5px] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <div className="mb-4">
+        <div className="">
           <label htmlFor="customerAddress" className="block font-bold mb-1">
             Customer Address
           </label>
@@ -123,10 +123,10 @@ const handleNavigate = ()=>{
             id="customerAddress"
             value={customerAddress}
             onChange={(e) => setCustomerAddress(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-[5px] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <div className="mb-4">
+        <div className="">
           <label htmlFor="billingDate" className="block font-bold mb-1">
             Billing Date
           </label>
@@ -136,13 +136,14 @@ const handleNavigate = ()=>{
             id="billingDate"
             value={billingDate}
             onChange={(e) => setBillingDate(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-[5px] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div>
-          <h3 className="text-lg font-bold mb-2">Items</h3>
+          <h3 className="text-lg font-bold ">Items</h3>
+          <div className=' flex  overflow-x-scroll h-26'>
           {items.map((item, index) => (
-            <div key={index} className="mb-4 flex items-center">
+            <div key={index} className="mb-2 flex border-2 space-y-2 md:space-y-0 p-2 mx-4  flex-col md:flex-row items-center">
                 <label htmlFor="">Product Name
                 <br />
                 <input
@@ -162,7 +163,7 @@ const handleNavigate = ()=>{
                 placeholder="Quantity"
                 value={item.quantity}
                 onChange={(e) => handleInputChange(index, 'quantity', e.target.value)}
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mr-2 w-24"
+                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mr-2 w-full md:w-24"
               />
               </label>
               <label htmlFor="">Price
@@ -173,7 +174,7 @@ const handleNavigate = ()=>{
                 placeholder="Price"
                 value={item.price}
                 onChange={(e) => handleInputChange(index, 'price', e.target.value)}
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mr-2 w-24"
+                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mr-2 w-full md:w-24"
               />
               </label>
               <span className="font-bold mr-2">
@@ -188,20 +189,21 @@ const handleNavigate = ()=>{
               </button>
             </div>
           ))}
+          </div>
           <div className='flex justify-between'>
           <button
             type="button"
             onClick={handleAddItem}
-            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300"
+            className="bg-blue-500 text-white px-4 rounded-md hover:bg-blue-600 transition-colors duration-300"
           >
             Add Item
           </button>
-          <div className="flex justify-end mb-4">
+          <div className="flex justify-end mb-2">
             <span className="font-bold">Grand Total: {calculateGrandTotal()}</span>
           </div>
           </div>
         </div>
-        <div className="mt-8">
+        <div className=" w-full flex justify-center ">
           <button
           // onClick={handleOpen}
             type="submit"

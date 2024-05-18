@@ -7,6 +7,7 @@ import Sidenav from './Sidenavbar';
 import LoginForm from './Login';
 import BillGenerator from './Billing';
 import CustomerList from './CustomerList';
+import Home from './home';
 
 function App() {
   
@@ -17,7 +18,7 @@ function App() {
     <BrowserRouter>
     <Routes>
     <Route path = "/" element={<Sidenav />} >
-    <Route index element = {<LoginForm />} />
+    <Route index element = {<Home/>} />
     <Route path= "/billing" element = {<BillGenerator />} />
     <Route path= "/customerlist" element = {<CustomerList />} />
     </Route>
